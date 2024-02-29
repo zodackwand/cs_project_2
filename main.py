@@ -4,7 +4,7 @@ class Game:
     def find_neighbours(self):
         pass
 
-    def word_ladder(self):
+    def word_ladder(self, start_word: str, end_word: str) -> list:
         pass
 
 def main():
