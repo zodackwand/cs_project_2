@@ -5,6 +5,7 @@ f = open('words_alpha.txt')
 words_list = []
 for word in f.read().split():
     words_list.append(word)
+    
 class Game:
     def find_neighbors(self, target_word, lst):
         neighbours = []
@@ -24,7 +25,7 @@ class Game:
             count = 0
         return neighbours
     
-    def word_ladder(self, start, end, word_list = [word.strip() for word in open('words_alpha.txt', 'r')]):
+    def word_ladder(self, start, end, words_list):
         queue = [(start, [start])]
         visited = set()
 
@@ -35,7 +36,7 @@ class Game:
                 return current_path
 
             visited.add(current_word)
-            neighbors = self.find_neighbors(current_word, word_list)
+            neighbors = self.find_neighbors(current_word, words_list)
 
             for neighbor in neighbors:
                 if neighbor not in visited:
@@ -51,7 +52,7 @@ def main():
 
     # Get the path
     start_time = time.time()
-    path_array = game.word_ladder(start_word, end_word)
+    path_array = game.word_ladder(start_word, end_word, words_list)
     end_time = time.time()
 
     execution_time = end_time - start_time
