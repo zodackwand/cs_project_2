@@ -65,7 +65,7 @@ def main():
         print("No word ladder found.")
 
     # Print execution time
-    print(f'Execution time: {execution_time}')
+    print(f'\nExecution time: {execution_time}')
         
 if __name__ == "__main__":
     main()
